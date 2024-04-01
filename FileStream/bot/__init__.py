@@ -68,7 +68,7 @@ class Bot(Client):
 class FileStream():
     USER: User = None
     USER_ID: int = None
-             Client(
+    Client(
     name="FileStream",
     api_id=Telegram.API_ID,
     api_hash=Telegram.API_HASH,
@@ -78,7 +78,7 @@ class FileStream():
     sleep_threshold=Telegram.SLEEP_THRESHOLD,
     workers=Telegram.WORKERS,
     no_updates=no_updates
-)
+    )
 
 multi_clients = {}
 work_loads = {}
