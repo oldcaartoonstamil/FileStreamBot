@@ -11,7 +11,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums.parse_mode import ParseMode
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
 
-@FileStream.on_message(
+@Bot.on_message(
     filters.private
     & (
             filters.document
@@ -36,7 +36,7 @@ async def private_receive_handler(bot: Bot, message: Message):
             return
     file1=getattr(message,message.media.value)
     file_name1=file1.file_name
-    msg1 = await FileStream.USER.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter='document')
+    msg1 = await bot.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter='document')
     if msg1==0:
         return
     try:
