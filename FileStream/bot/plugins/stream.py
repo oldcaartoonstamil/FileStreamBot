@@ -37,9 +37,9 @@ async def private_receive_handler(bot: Client, message: Message):
     file1=getattr(message,message.media.value)
     file_name1=file1.file_name
     file3=[]
-     async for msg1 in bot.search_messages(chat_id=int(-1001990899694),query=str(file_name1),filter='document'):
-         filename2=str(msg1.document.file_name)
-         file3.append(filename2)
+    async for msg1 in bot.search_messages(chat_id=int(-1001990899694),query=str(file_name1),filter='document'):
+        filename2=str(msg1.document.file_name)
+        file3.append(filename2)
     if file_name1 not in file3:
         return
     try:
