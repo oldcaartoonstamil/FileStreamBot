@@ -31,7 +31,7 @@ class User(Client):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped. Bye.")
 
-class Bot(Client):
+class FileStream(Client):
     USER: User = None
     USER_ID: int = None
 
@@ -65,17 +65,7 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped. Bye.")
-FileStream=Client(
-    name="FileStream",
-    api_id=Telegram.API_ID,
-    api_hash=Telegram.API_HASH,
-    workdir="FileStream",
-    plugins=plugins,
-    bot_token=Telegram.BOT_TOKEN,
-    sleep_threshold=Telegram.SLEEP_THRESHOLD,
-    workers=Telegram.WORKERS,
-    no_updates=no_updates
-    )
+
 
 multi_clients = {}
 work_loads = {}
