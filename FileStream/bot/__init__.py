@@ -32,7 +32,7 @@ class User(Client):
         self.LOGGER(__name__).info("Bot stopped. Bye.")
 
 class Bot(Client):
-    USER: User = None
+    User = None
     USER_ID: int = None
 
     def __init__(self):
