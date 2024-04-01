@@ -65,10 +65,7 @@ class Bot(Client):
     async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped. Bye.")
-class FileStream():
-    USER: User = None
-    USER_ID: int = None
-    Client(
+FileStream=Client(
     name="FileStream",
     api_id=Telegram.API_ID,
     api_hash=Telegram.API_HASH,
