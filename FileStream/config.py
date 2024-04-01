@@ -33,4 +33,4 @@ class Server:
     HAS_SSL = str(env.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
     NO_PORT = str(env.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
     FQDN = str(env.get("FQDN", 'medialinksstreaj-2072707f9998.herokuapp.com'))
-    URL = "https://{}/".format.(FQDN)
+    URL = "https://{}/".format(FQDN)
