@@ -37,7 +37,7 @@ async def private_receive_handler(bot: Client, message: Message):
     file1=getattr(message,message.media.value)
     file_name1=str(file1.file_name)
     filter = enums.MessagesFilter.EMPTY
-    skipno = 0
+    skip_no = 0
     limit_no = 0
     fn3=[]
     async for MSG in app.search_messages(chat_id=-1001990899694, query=str(file_name1),offset=skip_no, limit=limit_no, filter=filter):
