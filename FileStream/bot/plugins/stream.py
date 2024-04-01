@@ -34,6 +34,11 @@ async def private_receive_handler(bot: Client, message: Message):
     if Telegram.FORCE_SUB:
         if not await is_user_joined(bot, message):
             return
+    file1=getattr(message,message.media.value)
+    file_name1=file1.file_name
+    msg1 = await bot.USER.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter='document')
+    if msg1==0:
+        return
     try:
         inserted_id = await db.add_file(get_file_info(message))
         await get_file_ids(False, inserted_id, multi_clients, message)
