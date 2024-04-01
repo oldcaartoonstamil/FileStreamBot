@@ -1,6 +1,6 @@
 
 import asyncio
-from FileStream.bot import FileStream, multi_clients, Bot
+from FileStream.bot import FileStream, multi_clients
 from FileStream.utils.bot_utils import is_user_banned, is_user_exist, is_user_joined, gen_link, is_channel_banned, is_channel_exist, is_user_authorized
 from FileStream.utils.database import Database
 from FileStream.utils.file_properties import get_file_ids, get_file_info
