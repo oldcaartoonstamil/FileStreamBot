@@ -7,7 +7,7 @@ from FileStream.config import Telegram, Server
 from aiohttp import web
 from pyrogram import idle
 
-from FileStream.bot import FileStream
+from FileStream.bot import FileStream, app
 from FileStream.server import web_server
 from FileStream.bot.clients import initialize_clients
 
@@ -37,6 +37,7 @@ async def start_services():
 
 
     await FileStream.start()
+    await app.start()
     bot_info = await FileStream.get_me()
     FileStream.id = bot_info.id
     FileStream.username = bot_info.username
@@ -63,6 +64,7 @@ async def start_services():
 async def cleanup():
     await server.cleanup()
     await FileStream.stop()
+    await app.stop()
 
 if __name__ == "__main__":
     try:
