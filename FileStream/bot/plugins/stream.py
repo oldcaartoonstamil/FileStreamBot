@@ -11,7 +11,7 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from pyrogram.enums.parse_mode import ParseMode
 db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
 
-@FileStream.on_message(
+@Bot.on_message(
     filters.private
     & (
             filters.document
@@ -58,7 +58,7 @@ async def private_receive_handler(bot: Bot, message: Message:
                                disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 
-@FileStream.on_message(
+@Bot.on_message(
     filters.channel
     & ~filters.forwarded
     & ~filters.media_group
