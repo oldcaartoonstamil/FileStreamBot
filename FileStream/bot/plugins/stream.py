@@ -24,7 +24,7 @@ db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
     ),
     group=4,
 )
-async def private_receive_handler(bot: Bot, message: Message):
+async def private_receive_handler(bot: Client, message: Message):
     if not await is_user_authorized(message):
         return
     if await is_user_banned(message):
@@ -36,7 +36,7 @@ async def private_receive_handler(bot: Bot, message: Message):
             return
     file1=getattr(message,message.media.value)
     file_name1=file1.file_name
-    msg1 = await FileStream.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter='document')
+    msg1 = await bot.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter='document')
     if msg1==0:
         return
     try:
