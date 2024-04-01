@@ -1,6 +1,6 @@
 
 import asyncio
-from FileStream.bot import FileStream, multi_clients
+from FileStream.bot import FileStream, multi_clients, Bot
 from FileStream.utils.bot_utils import is_user_banned, is_user_exist, is_user_joined, gen_link, is_channel_banned, is_channel_exist, is_user_authorized
 from FileStream.utils.database import Database
 from FileStream.utils.file_properties import get_file_ids, get_file_info
@@ -24,7 +24,7 @@ db = Database(Telegram.DATABASE_URL, Telegram.SESSION_NAME)
     ),
     group=4,
 )
-async def private_receive_handler(bot: Client, message: Message):
+async def private_receive_handler(bot: Client, message: Message, fs:Bot):
     if not await is_user_authorized(message):
         return
     if await is_user_banned(message):
@@ -36,7 +36,7 @@ async def private_receive_handler(bot: Client, message: Message):
             return
     file1=getattr(message,message.media.value)
     file_name1=file1.file_name
-    msg1 = await bot.USER.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter='document')
+    msg1 = await fs.USER.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter='document')
     if msg1==0:
         return
     try:
