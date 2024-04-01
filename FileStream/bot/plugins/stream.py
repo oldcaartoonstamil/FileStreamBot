@@ -36,7 +36,7 @@ async def private_receive_handler(bot: Client, message: Message):
             return
     file1=getattr(message,message.media.value)
     file_name1=file1.file_name
-    msg1=await messages.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter=enums.MessagesFilter.EMPTY)
+    msg1=await message.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter=enums.MessagesFilter.EMPTY)
     if msg1==0:
         return
     try:
