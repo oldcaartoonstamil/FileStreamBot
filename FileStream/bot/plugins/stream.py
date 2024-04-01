@@ -36,9 +36,16 @@ async def private_receive_handler(bot: Client, message: Message):
             return
     file1=getattr(message,message.media.value)
     file_name1=file1.file_name
-    msg1=await bot.search_messages_count(chat_id=int(-1001990899694),query=str(file_name1),filter=enums.MessagesFilter.EMPTY)
-    if msg1==0:
+    filter = enums.MessagesFilter.EMPTY
+    skipno = 0
+    limit_no = 0
+    fn3=[]
+    async for MSG in app.search_messages(chat_id=-1001990899694, query=str(file_name1),offset=skip_no, limit=limit_no, filter=filter):
+        msg = await bot.get_messages(-1001990899694, MSG.id)
+        fn3.append(msg.file_name)
+    if file_name1 not in fn3:
         return
+    
     try:
         inserted_id = await db.add_file(get_file_info(message))
         await get_file_ids(False, inserted_id, multi_clients, message)
