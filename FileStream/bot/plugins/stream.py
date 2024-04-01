@@ -66,7 +66,7 @@ async def private_receive_handler(bot: Client, message: Message):
                                disable_web_page_preview=True, parse_mode=ParseMode.MARKDOWN)
 
 
-@Bot.on_message(
+@FileStream.on_message(
     filters.channel
     & ~filters.forwarded
     & ~filters.media_group
