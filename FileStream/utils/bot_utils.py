@@ -30,7 +30,7 @@ async def is_user_joined(bot, message: Message):
         user = await bot.get_chat_member(chat_id=channel_chat_id, user_id=message.from_user.id)
         if user.status == "BANNED":
             await message.reply_text(
-                text=LANG.BAN_TEXT.format(Telegram.OWNER_ID),
+                text=LANG.BAN_TEXT,
                 parse_mode=ParseMode.MARKDOWN,
                 disable_web_page_preview=True
             )
