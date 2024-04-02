@@ -82,11 +82,11 @@ async def private_receive_handler(bot: Client, message: Message):
     )
 )
 async def channel_receive_handler(bot: Client, message: Message):
+    if message.chat.id!=-1001990899694:
+        return
     if await is_channel_banned(bot, message):
         return
     await is_channel_exist(bot, message)
-    if message.chat.id!=-1001990899694:
-        return
     try:
         inserted_id = await db.add_file(get_file_info(message))
         await get_file_ids(False, inserted_id, multi_clients, message)
