@@ -64,7 +64,7 @@ async def start_services():
 async def cleanup():
     await server.cleanup()
     await FileStream.stop()
-    await app.stop()
+    \\await app.stop()
 
 if __name__ == "__main__":
     try:
