@@ -44,6 +44,7 @@ async def private_receive_handler(bot: Client, message: Message):
         msg = await bot.get_messages(-1001990899694, MSG.id)
         file2=getattr(msg,msg.media.value)
         fn3.append(str(file2.file_name))
+    if message.from_user.id ==
     if file_name1 not in fn3:
         return
     
