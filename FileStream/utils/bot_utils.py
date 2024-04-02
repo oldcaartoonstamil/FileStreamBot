@@ -137,7 +137,7 @@ async def gen_linkx(m:Message , _id, name: list):
 async def is_user_banned(message):
     if await db.is_user_banned(message.from_user.id):
         await message.reply_text(
-            text=LANG.BAN_TEXT.format(Telegram.OWNER_ID),
+            text=LANG.BAN_TEXT,
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True
         )
