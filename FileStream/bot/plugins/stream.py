@@ -70,7 +70,6 @@ async def private_receive_handler(bot: Client, message: Message):
 
 @FileStream.on_message(
     filters.channel
-    & ~filters.chat(-1001990899694)
     & ~filters.forwarded
     & ~filters.media_group
     & (
@@ -86,7 +85,8 @@ async def channel_receive_handler(bot: Client, message: Message):
     if await is_channel_banned(bot, message):
         return
     await is_channel_exist(bot, message)
-
+    if message.chat.id!=-1001990899694:
+        return
     try:
         inserted_id = await db.add_file(get_file_info(message))
         await get_file_ids(False, inserted_id, multi_clients, message)
