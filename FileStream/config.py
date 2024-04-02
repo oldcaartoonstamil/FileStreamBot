@@ -12,8 +12,8 @@ class Telegram:
     DATABASE_URL = "mongodb+srv://oldfilestorebot:ofsb@cluster0.myqdttg.mongodb.net/?retryWrites=true&w=majority"
     UPDATES_CHANNEL = str(env.get('UPDATES_CHANNEL', "media_links"))
     SESSION_NAME = str(env.get('SESSION_NAME', 'FileStream112'))
-    FORCE_SUB_ID = 
-    FORCE_SUB = 
+    FORCE_SUB_ID = -1001304669315
+    FORCE_SUB = True
     SLEEP_THRESHOLD = int(env.get("SLEEP_THRESHOLD", "60"))
     FILE_PIC = env.get('FILE_PIC', "https://telegra.ph/file/7de19fc3f09d19ddbf823.jpg")
     START_PIC = env.get('START_PIC', "https://telegra.ph/file/7de19fc3f09d19ddbf823.jpg")
