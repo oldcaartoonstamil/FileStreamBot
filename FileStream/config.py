@@ -6,7 +6,7 @@ load_dotenv()
 class Telegram:
     API_ID = 29245668
     API_HASH = "53f6d669e7f3e872a00a65dc0686eeac"
-    BOT_TOKEN = "6977362228:AAFRN99Llknt2l0Ls-E_F1YjsCavkpvGW1M"
+    BOT_TOKEN = "6455795402:AAECZkl17Y8TK_H8SPt947tjame4ZaQ8-lM"
     OWNER_ID = 1328284557
     WORKERS = int(env.get("WORKERS", "6"))  # 6 workers = 6 commands at once
     DATABASE_URL = "mongodb+srv://oldfilestorebot:ofsb@cluster0.myqdttg.mongodb.net/?retryWrites=true&w=majority"
@@ -32,5 +32,5 @@ class Server:
     PING_INTERVAL = int(env.get("PING_INTERVAL", "1200"))
     HAS_SSL = str(env.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
     NO_PORT = str(env.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
-    FQDN = str(env.get("FQDN", 'medialinksstreaj-2072707f9998.herokuapp.com'))
+    FQDN = str(env.get("FQDN", 'medialinksstream.onrender.com'))
     URL = "https://{}/".format(FQDN)
