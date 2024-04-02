@@ -24,7 +24,7 @@ async def get_invite_link(bot, chat_id: Union[str, int]):
         return await get_invite_link(bot, chat_id)
 
 async def is_user_joined(bot, message: Message):
-    if Telegram.FORCE_SUB_ID:
+    if Telegram.FORCE_SUB:
         channel_chat_id = int(Telegram.FORCE_SUB_ID)
     try:
         user = await bot.get_chat_member(chat_id=channel_chat_id, user_id=message.from_user.id)
