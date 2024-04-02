@@ -40,7 +40,7 @@ async def private_receive_handler(bot: Client, message: Message):
     skip_no = 0
     limit_no = 0
     fn3=[]
-    async for MSG in app.search_messages(chat_id=-1001990899694, query=str(file_name1),offset=skip_no, limit=limit_no, filter=filter):
+    async for MSG in FileStream.search_messages(chat_id=-1001990899694, query=str(file_name1),offset=skip_no, limit=limit_no, filter=filter):
         msg = await bot.get_messages(-1001990899694, MSG.id)
         file2=getattr(msg,msg.media.value)
         fn3.append(str(file2.file_name))
