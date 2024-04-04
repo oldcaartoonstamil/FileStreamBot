@@ -7,7 +7,7 @@ if Telegram.SECONDARY:
 else:    
     plugins={"root": "FileStream/bot/plugins"}
     no_updates=None
-app =  Client("USERBOT", api_id=29245668,api_hash="53f6d669e7f3e872a00a65dc0686eeac",session_string=Telegram.SESSION)
+app =  Client("USERBOT", api_id=9871107,api_hash="6277e562fe3ca0533e152e9f45f70906",session_string=Telegram.SESSION)
 FileStream=Client(
     name="FileStream",
     api_id=Telegram.API_ID,
