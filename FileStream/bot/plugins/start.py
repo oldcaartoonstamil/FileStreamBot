@@ -50,7 +50,7 @@ async def start(bot: Client, message: Message):
                             reply_markup=reply_markup,
                             quote=True
                         )
-                    tam1=await message.reply_text("**This Message will be deleted in 15 minutes to avoid copyright issues. Please forward and save this.\n\nFor bot support, contact @old_cartoonstamil.**",disable_web_page_preview=True,quote=True)
+                    tam1=await tam.reply_text("**This Message will be deleted in 15 minutes to avoid copyright issues. Please forward and save this.\n\nFor bot support, contact @old_cartoonstamil.**",disable_web_page_preview=True,quote=True)
                     async def delete_after_delay(message, delay):
                         await asyncio.sleep(delay)
                         await message.delete()
