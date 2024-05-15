@@ -51,11 +51,11 @@ async def start(bot: Client, message: Message):
                             quote=True
                         )
                     tam1=await message.reply_text("**This Message will be deleted in 15 minutes to avoid copyright issues. Please forward and save them.\n\nFor bot support, contact @old_cartoonstamil.**",disable_web_page_preview=True,quote=True)
-                    asyncio.create_task(delete_after_delay(tam,900))
-                    asyncio.create_task(delete_after_delay(tam1,900))
                     async def delete_after_delay(message, delay):
                         await asyncio.sleep(delay)
                         await message.delete()
+                    asyncio.create_task(delete_after_delay(tam,900))
+                    asyncio.create_task(delete_after_delay(tam1,900))
             except FIleNotFound as e:
                 await message.reply_text("File Not Found")
             except Exception as e:
