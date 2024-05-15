@@ -32,5 +32,5 @@ class Server:
     PING_INTERVAL = int(env.get("PING_INTERVAL", "1200"))
     HAS_SSL = str(env.get("HAS_SSL", "0").lower()) in ("1", "true", "t", "yes", "y")
     NO_PORT = str(env.get("NO_PORT", "0").lower()) in ("1", "true", "t", "yes", "y")
-    FQDN = str(env.get("FQDN", 'medialinks-9c2dd93629bc.herokuapp.com'))
+    FQDN = str(env.get("FQDN", 'medialinksstreaming-7e6470cdd993.herokuapp.com'))
     URL = "https://{}/".format(FQDN)
