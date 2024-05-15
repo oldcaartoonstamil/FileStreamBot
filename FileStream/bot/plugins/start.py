@@ -55,7 +55,7 @@ async def start(bot: Client, message: Message):
                         await asyncio.sleep(delay)
                         await message.delete()
                     asyncio.create_task(delete_after_delay(tam,900))
-                    asyncio.create_task(delete_after_delay(tam1,900))
+                    asyncio.create_task(delete_after_delay(tam1,10))
             except FIleNotFound as e:
                 await message.reply_text("File Not Found")
             except Exception as e:
