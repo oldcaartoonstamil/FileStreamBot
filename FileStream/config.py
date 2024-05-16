@@ -4,12 +4,12 @@ from dotenv import load_dotenv
 load_dotenv()
 
 class Telegram:
-    API_ID = 29245668
-    API_HASH = "53f6d669e7f3e872a00a65dc0686eeac"
-    BOT_TOKEN = "6977362228:AAGlJWyKm7o5-GniHtIzfekfrNKN0xFOg1c"
+    API_ID = 1
+    API_HASH = "2"
+    BOT_TOKEN = "fuck you 🖕"
     OWNER_ID = 1328284557
     WORKERS = int(env.get("WORKERS", "6"))  # 6 workers = 6 commands at once
-    DATABASE_URL = "mongodb+srv://oldfilestorebot:ofsb@cluster0.myqdttg.mongodb.net/?retryWrites=true&w=majority"
+    DATABASE_URL="🖕"
     UPDATES_CHANNEL = str(env.get('UPDATES_CHANNEL', "media_links"))
     SESSION_NAME = str(env.get('SESSION_NAME', 'filestream'))
     FORCE_SUB_ID = -1001304669315
