@@ -35,7 +35,7 @@ async def private_receive_handler(bot: Client, message: Message):
         if not await is_user_joined(bot, message):
             return
     if message.from_user.id != Telegram.OWNER_ID:
-        message.reply_text("**sorry, only owners can generate streaming links**",disable_web_page_preview=True,quote=True)
+        await message.reply_text("**sorry, only owners can generate streaming links**",disable_web_page_preview=True,quote=True)
         return
     try:
         inserted_id = await db.add_file(get_file_info(message))
